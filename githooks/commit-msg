@@ -1,0 +1,3 @@
+#!/bin/sh
+# the staged diff and this message, scanned before the commit is made
+exec python "$(dirname "$0")/scan.py" commit "$1"
