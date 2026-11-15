@@ -65,8 +65,9 @@ your conclusions) and ask for `path:line` or log-timestamp evidence.
    reach the ADR).
 
 **Check the reviewers too.** Spot-check each claim the ADR leans on
-(`sed -n` the cited lines): reviewers misattribute as well (one quoted a
-prompt line that doesn't exist). And read the log's coverage first: it
+by reading the cited lines whole (`sed -n`), not with a narrow grep: a
+pattern that wants text after the match misses a line that ends sooner,
+and a true finding looks false. And read the log's coverage first: it
 rotates, so it may hold only the last few hours; earlier days survive
 only in the model's notes. `.ccsh_history` shows the options the user
 really runs claude with.
