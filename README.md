@@ -9,6 +9,13 @@ harness material for working on them.
   with the user as decider, then execute the ADR with the test suite as the
   oracle. Proven on ccnix's ADR-0001 (2026-10-29).
 
+- `skills/turtle-field-report/`: the self-improvement loop between the
+  Claude model driving a ccnix turtle in game and the code it drives:
+  fetch the turtle's `/claude` folder and `claude.log`, review its report
+  against turtlelib and `claude.lua`, decide in an ADR, build with the
+  sims as the oracle, and hand the changes back to the model. First run:
+  ccnix's ADR-0011 (2026-11-15).
+
 - `githooks/`: a scan for environment-specific and sensitive details
   before anything reaches these public repos. `commit-msg` checks the
   staged diff and message; `pre-push` checks every outgoing commit. Each
