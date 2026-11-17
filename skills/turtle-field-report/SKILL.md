@@ -119,9 +119,11 @@ As `/architecture-decision` writes it, with these habits:
 - Regenerate help (`python sim/mkhelp.py`): `help/turtlelib.txt` and
   `turtle/tl/index.txt` are what the in-game model reads. Keep index
   lines short; they cost tokens on every request.
-- Bump `deploy/version` (a feature: minor), let the release and the
-  lockstep bump in ccnix-mod run. UNTESTED.md gets each item's in-game
-  check. The server takes the ROM with `/ccnix rom update` (the user's
+- Bump `deploy/version` (a feature: minor) only once the user says ok:
+  the release waits for them. Then the release and the lockstep bump in
+  ccnix-mod run. UNTESTED.md gets each item's in-game check, in a
+  section with its own `needs-in-game-test` issue (the number in the
+  heading). The server takes the ROM with `/ccnix rom update` (the user's
   command) or a new jar.
 
 ## 6. Hand it back to the turtle
@@ -144,7 +146,8 @@ The loop closes only if the in-game model learns what changed.
 ## 7. Closing
 
 Mark the ADR Accepted with the user's answers, tick its items, move what
-the user tried into UNTESTED.md's Tested section as they report it, and
+the user tried (or the next field report shows working) into
+UNTESTED.md's Tested section, ticking and closing the section's issue, and
 keep the fetched folder until the next pass (it is the "before" picture).
 
 ## Tips
