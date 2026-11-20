@@ -178,5 +178,16 @@ Give them as a numbered list, each with what they should see:
    the model is a claim. The message only the new code prints is proof.
 2. **Ask the turtle for numbers**: counts, seconds, slots, sides. They
    make a FAIL a bug report, not an impression.
-3. **Keep the reboot check last.** It cuts the session, and everything
+3. **Check the plan's own code and setups before installing.** v6 had
+   three mistakes:
+   - **A global the sandbox doesn't have.** `settings.get` can't run
+     there. Look up what's in scope in the lua tool's description in
+     `turtle/claude.lua`.
+   - **A predicate that couldn't tell the two cases apart.** A clean
+     tool has `damage = 0`, not nil.
+   - **A setup the game won't allow.** A turtle pushes a player out of
+     its way, so "stand in its way" needs a mob or an armor stand.
+
+   Each one cost a check its evidence.
+4. **Keep the reboot check last.** It cuts the session, and everything
    after it depends on the resume working.
