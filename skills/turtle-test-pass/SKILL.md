@@ -26,9 +26,26 @@ One pass is one plan, `tests-v<N>.md`. Its checks are the release's
   (`/claude/test-<...>-results.md`). Read it for the scratch area's corners,
   what was skipped and why, and what failed. A FAIL fixed since is a
   check again.
-- **The turtle's own newer reports** (`report_harness_v<N>.md` written
-  since the release): a fault it hit that the release claims to fix is
-  a check too.
+- **Everything on the turtle since the last pass: fetch it fresh and read
+  all of it.** Fetch as `/turtle-field-report` step 1 does, into a new
+  dated folder, and `diff -rq` it against the last fetch. Then read in
+  full:
+  - every new or changed file in `claude/`: reports, plans, notes, helpers,
+    and lines added to old reports;
+  - the harness log since the last fetch (`claude.log*`): each `goal:`,
+    each failed result, and the player's talk with the model. A request
+    made there ("write a letter to my VS Code agent") is the user's
+    request.
+
+  Each finding then gets one of four answers:
+  - **a check in the plan:** a fault the release claims to fix, or a
+    cheap repro of one it doesn't, with the numbers the fix needs;
+  - **a bug issue:** a fault no release has fixed yet;
+  - **a feature issue:** a request;
+  - **set aside:** in the report to the user, with the reason.
+
+  Reading only the part the step at hand needs (for example just a
+  report's file name) leaves known evidence out of the pass.
 - **Leave out** what needs the other base, more than about 300 fuel,
   materials the turtle can't cheaply get, or a player's hands for long.
   Those stay open for the player.
