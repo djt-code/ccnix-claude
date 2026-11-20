@@ -16,6 +16,13 @@ harness material for working on them.
   sims as the oracle, and hand the changes back to the model. First run:
   ccnix's ADR-0011 (2026-11-15).
 
+- `skills/turtle-test-pass/`: its companion, after a release: a test plan
+  for the turtle from the release's `needs-in-game-test` issues, with
+  evidence rules so a PASS proves the fix (and INCONCLUSIVE when it
+  doesn't), installed on the turtle's disk, the user's launch steps, and
+  the results turned into closed issues, bugs and the next field report.
+  First run: the v6 pass of ccnix 0.54.0 (2026-11-20).
+
 - `githooks/`: a scan for environment-specific and sensitive details
   before anything reaches these public repos. `commit-msg` checks the
   staged diff and message; `pre-push` checks every outgoing commit. Each

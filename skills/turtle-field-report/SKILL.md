@@ -143,6 +143,11 @@ The loop closes only if the in-game model learns what changed.
   what's new, update helpers.lua and your notes, and keep
   /claude/report_harness_v<N+1>.md as you work". The ADR's Consequences
   name what the next report should watch.
+- **The test pass:** once the release is out, `/turtle-test-pass` writes
+  the turtle a test plan from the release's `needs-in-game-test` issues,
+  installs it on its disk and gives the user the launch steps. The
+  results close the issues, and the pass's report starts the next
+  field-report pass.
 
 ## 7. Closing
 
