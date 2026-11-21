@@ -188,6 +188,24 @@ Give them as a numbered list, each with what they should see:
    - **A setup the game won't allow.** A turtle pushes a player out of
      its way, so "stand in its way" needs a mob or an armor stand.
 
-   Each one cost a check its evidence.
-4. **Keep the reboot check last.** It cuts the session, and everything
+   Each one cost a check its evidence. v7's plan nearly had five more,
+   caught before installing:
+   - **A tool isn't a function.** `run_program` is a tool, so code can't
+     time it, and it runs only the programs in claude.lua's `PROGRAMS`.
+   - **A check that reads the map.** Seal and room checks count a cell
+     the map has never seen as open: scan the area first.
+   - **A step that moves the inventory.** `T.craft` first stashes what the
+     turtle carries in the chest, so carried items join the stacks a
+     check lays out there.
+   - **An item the call needs first.** A pave with every slot full of
+     soul sand must pave with soul sand, or it stops at "no item aboard"
+     before the check.
+   - **A state the code skips.** The chat listener equips the chat box
+     only when it isn't on already; with no swap, no put-back note.
+4. **A right result with no refusal may be the game answering.** When a
+   check expects what the sims' mock does (v6's sideways chain: the mock
+   refuses it, the game places it), "it just worked" is evidence about
+   the mock. Fix the mock (a bug) and close the check with the game's
+   result.
+5. **Keep the reboot check last.** It cuts the session, and everything
    after it depends on the resume working.
